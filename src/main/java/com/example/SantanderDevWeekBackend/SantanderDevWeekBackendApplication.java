@@ -18,13 +18,10 @@ public class SantanderDevWeekBackendApplication {
 
 	// Criação do visualizador do Swagger
 	@Bean
-	public OpenAPI customOpenAPI (
-		@Value("${application.description}") String description,
-		@Value("${application.version}") String version
-	){
+	public OpenAPI customOpenAPI (@Value("${application.description}") String description){
 		return new OpenAPI().info(new Info()
 				.title(description)
-				.version(version)
+				.version("2.0")
 				.termsOfService("http://swagger.io/terms")
 				.license(new License().name("Apache 2.0").url("http://springdoc.org"))
 		);
